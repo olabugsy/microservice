@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: Order-Service
+
+  datasource:
+    url: jdbc:postgresql://conformed-1.cpi8ie0i24uv.us-east-2.rds.amazonaws.com/postgres
+    username: olawale
+    password: Olawale22
+    driver-class-name: org.postgresql.Driver
+
+server:
+  port: 8087
+
+  jpa:
+    properties:
+      hibernate:
+        default_schema: orders
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+
+    eureka:
+      client:
+        service-url:
+          defaultZone: http://localhost:8761/eureka/  # URL of the Eureka server
+        register-with-eureka: true  # This client should register itself with Eureka
+        fetch-registry: true
